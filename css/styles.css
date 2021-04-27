@@ -4,6 +4,8 @@
   --color-accent: #ff5252;
   --color-headings: #0f4a32;
   --color-body: #7ba68e;
+  --color-border: #ccc;
+  --border-radius: 30px;
 }
 *,
 *::after,
@@ -204,8 +206,8 @@ a {
 /* Inputs */
 .input {
   padding: 1.5rem 3.5rem;
-  border: 1px solid #ccc;
-  border-radius: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
   outline: 0;
   color: var(--color-headings);
   font-size: 2rem;
@@ -213,9 +215,40 @@ a {
 ::placeholder {
   color: #cdcbd7;
 }
+.input-group {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  display: flex;
+}
+.input-group .input {
+  border: 0;
+  flex-grow: 1;
+  padding: 1.5rem 1rem;
+}
+.input-group .btn {
+  display: flex;
+  margin: 4px;
+}
+.input-group .btn .icon {
+  width: 2rem;
+  height: 2rem;
+}
+.input-group .btn .icon-container {
+  background: none;
+  width: auto;
+  height: auto;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media screen and (min-width: 1024px) {
   .input {
     font-size: 1.5rem;
+  }
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
